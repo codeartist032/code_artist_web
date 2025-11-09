@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary: #4db7ff; /* main accent */
+  --white: #ffffff;
+  --muted-white: rgba(255, 255, 255, 0.85);
+  --glass-bg: rgba(12, 12, 12, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --radius: 12px;
+  --transition: 0.28s ease;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: var(--muted-white);
+  background: #060606; /* subtle dark background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@import "./header";
+@import "./about";
+@import "./services";
+@import "./portfolio";
+@import "./contact";
+@import "./responsive";
+@import "./ProjectDetails";
