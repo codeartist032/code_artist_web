@@ -8,7 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState('');
 
   const handleWhatsAppSend = () => {
-    const phone = '963959860097'; // Your WhatsApp number
+    const phone = '9660534538089'; // Your WhatsApp number
     const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encodedText = encodeURIComponent(text);
     const whatsappURL = `https://wa.me/${phone}?text=${encodedText}`;
@@ -22,7 +22,7 @@ export default function Contact() {
           <div className="contact-left">
             <h1 className="sube-title">{lang === 'en' ? 'Contact Us' : 'تواصل معنا'}</h1>
             <p><i className="fa-solid fa-paper-plane"></i> code96392@gmail.com </p>
-            <p><i className="fa-solid fa-phone-volume"></i> +963 0959860097 </p>
+            <p><i className="fa-solid fa-phone-volume"></i> 0534538089 </p>
             <div className="social-icons">
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-facebook"></i>
