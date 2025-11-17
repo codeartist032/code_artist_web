@@ -1,73 +1,123 @@
 @media only screen and (max-width: 600px) {
+  /* Container inner padding for small screens */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header / hero text sizing */
+  #header {
+    padding: 40px 0;
+  }
+
   .header-text {
-    margin-top: 28px;
+    margin-top: 18px;
     font-size: 15px;
 
-    h1 {
-      font-size: 24px;
-      line-height: 1.08;
+    h1,
+    h2 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin: 0 0 8px 0;
     }
   }
 
+  /* Larger touch target for menu icon */
   .navbar .menu-icon {
     display: block;
-    font-size: 25px;
+    font-size: 28px;
+    padding: 8px;
   }
 
+  /* Mobile slide-out menu (wider and smoother) */
   .navbar .nav-links {
-    background: rgba(6, 6, 6, 0.96);
+    background: rgba(6, 6, 6, 0.98);
     position: fixed;
     top: 0;
-    right: -200px;
-    width: 200px;
+    right: -260px;
+    width: 260px;
     height: 100vh;
-    padding-top: 50px;
-    z-index: 2;
-    transition: right 0.5s;
+    padding-top: 70px;
+    padding-left: 18px;
+    padding-right: 18px;
+    z-index: 1000;
+    transition: right 0.35s ease;
     flex-direction: column;
+    gap: 18px;
+  }
+
+  .navbar .nav-links.open {
+    right: 0;
   }
 
   .navbar .nav-links li {
     display: block;
-    margin: 25px;
+    margin: 12px 0;
   }
 
   .navbar .nav-links .close-icon {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 18px;
+    right: 18px;
     cursor: pointer;
     display: block;
   }
 
+  /* Subtitles / section headings */
   .sube-title {
-    font-size: 36px;
+    font-size: 28px;
+    margin-bottom: 18px;
   }
 
+  /* Make two-column layouts stack nicely */
   .about-col-1,
-  .about-col-2 {
-    flex-basis: 100%;
-  }
-
-  .about-col-1 {
-    margin-bottom: 30px;
-  }
-
+  .about-col-2,
   .contact-left,
   .contact-right {
     flex-basis: 100%;
+    width: 100%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 20px;
+  }
+
+  /* Portfolio cards: full width on small screens */
+  #portfolio .work {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Make form controls full width and more touch-friendly */
+  form input,
+  form textarea,
+  .btn2 {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .header-text h1 {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header-text h1,
+  .header-text h2 {
     font-size: 34px;
   }
+
   .navbar .nav-links {
     gap: 18px;
+    right: auto;
+    position: static;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
   }
+
   .lang-switch {
-    width: 70px;
+    width: 74px;
     --switch-height: 32px;
     --knob-size: 26px;
   }
