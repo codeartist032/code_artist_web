@@ -1,0 +1,225 @@
+.header-text{
+  // margin-top: 109px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 5, 5, 0.35);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 225, 255, 1);
+  border-radius: 12px;
+  margin: 10px 0 20px;
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+  }
+
+  .brand {
+    font-weight: 900;
+    text-decoration: none;
+    color: rgba(77, 183, 255, 0.85);
+    letter-spacing: 0.5px;
+    font-size: 22px;
+    padding-right: 20px;
+    text-shadow: 0 0 1px #0ff, 0 0 2px #0ff, 0 0 1px #0ff;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    li {
+      list-style: none;
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--muted-white);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 6px 2px;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--primary),
+          rgba(77, 183, 255, 0.85)
+        );
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.35s ease;
+        border-radius: 2px;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+  }
+
+
+  .lang-switch {
+    --switch-height: 35px;
+    --knob-size: 26px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--switch-height);
+    padding: 4px;
+    width: 70px;
+    border-radius: 20px;
+    border: 1px solid rgba(77, 183, 255, 0.18);
+    color: var(--white);
+    cursor: pointer;
+
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      width: 24px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .knob {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: var(--knob-size);
+      height: var(--knob-size);
+      border-radius: 50%;
+      background: var(--white);
+      box-shadow: 0 8px 20px rgba(77, 183, 255, 0.12);
+      transition: transform var(--transition), box-shadow var(--transition);
+      transform: translateX(0);
+    }
+
+    .knob {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: translateX(0);
+    }
+
+    &.ar .knob {
+      transform: translateX(0px);
+    }
+
+    &.en .knob {
+      transform: translateX(34px);
+    }
+
+    &.en {
+      background: linear-gradient(
+        90deg,
+        rgba(77, 183, 255, 0.08),
+        rgba(255, 255, 255, 0.02)
+      );
+    }
+
+    &.ar {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(77, 183, 255, 0.08)
+      );
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 4px 18px rgba(77, 183, 255, 0.18);
+    }
+  }
+
+  /* Icons are hidden by default on desktop */
+  .menu-icon,
+  .close-icon {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--muted-white);
+  }
+}
+
+
+/* 🚀 NEW BREAKPOINT: Hamburger icon and mobile menu activate at 750px and below */
+@media (max-width: 750px) {
+    /* 1. Hide desktop nav links */
+    .navbar .nav-links {
+        display: none; /* Temporarily hide the desktop version */
+        /* Re-define for mobile menu */
+        position: fixed;
+        top: 0;
+        /* Position the menu completely off-screen to the right */
+        right: -300px;
+        height: 100vh;
+        width: 250px;
+        background: rgba(12, 12, 12, 0.95);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 60px 20px;
+        gap: 20px;
+        transition: right 0.3s ease;
+    }
+
+    /* 2. Show mobile menu when 'open' */
+    .navbar .nav-links.open {
+        display: flex; /* Show the mobile version */
+        right: 0; /* Bring the menu completely into view */
+    }
+
+    /* 3. Show hamburger icon */
+    .navbar .menu-icon {
+        display: block;
+        position: absolute;
+        font-size: 25px;
+        top: 18px;
+        right: 10px;
+        color: var(--muted-white);
+    }
+
+    /* 4. Show close icon */
+    .navbar .close-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* 5. Ensure actions container stays visible */
+    .navbar .actions {
+        margin-right: 40px; /* Adjust margin to prevent overlap with the menu icon */
+    }
+}
+
+/* Add a style to ensure the nav-links are shown as a flex row when screen is larger than 750px */
+@media (min-width: 751px) {
+    .navbar .nav-links {
+        display: flex;
+        position: static;
+        right: auto;
+    }
+}

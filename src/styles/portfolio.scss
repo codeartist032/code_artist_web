@@ -1,0 +1,64 @@
+.work-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.work {
+  width: 300px;
+  height: 250px; // ✅ Fixed height for all cards
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #111; // fallback background
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // ✅ Crop image to fill card
+    z-index: 0;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  .layer {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .details-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: var(--primary);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: rgba(77, 183, 255, 0.85);
+      }
+    }
+  }
+}

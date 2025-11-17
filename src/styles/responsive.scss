@@ -1,0 +1,74 @@
+@media only screen and (max-width: 600px) {
+  .header-text {
+    margin-top: 28px;
+    font-size: 15px;
+
+    h1 {
+      font-size: 24px;
+      line-height: 1.08;
+    }
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    font-size: 25px;
+  }
+
+  .navbar .nav-links {
+    background: rgba(6, 6, 6, 0.96);
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+    flex-direction: column;
+  }
+
+  .navbar .nav-links li {
+    display: block;
+    margin: 25px;
+  }
+
+  .navbar .nav-links .close-icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .sube-title {
+    font-size: 36px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .header-text h1 {
+    font-size: 34px;
+  }
+  .navbar .nav-links {
+    gap: 18px;
+  }
+  .lang-switch {
+    width: 70px;
+    --switch-height: 32px;
+    --knob-size: 26px;
+  }
+}
