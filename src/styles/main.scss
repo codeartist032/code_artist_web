@@ -30,18 +30,17 @@ body {
 }
 
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  .about{
-    background: radial-gradient(circle at 30% 68%, rgba(1, 170, 255, 0.15), transparent 30%);
-  }
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
-
 
 @media (max-width: 1250px) {
-.container{
-  margin: 15px;
-}
+  .container {
+    margin: 0;
+    padding: 0 15px; /* keep small inner padding on narrow screens if desired */
+  }
 }
 
 @import "./header";

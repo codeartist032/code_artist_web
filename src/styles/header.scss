@@ -1,16 +1,23 @@
+#header {
+  padding: 20px 0;
+}
+
 .header-text{
-  // margin-top: 109px;
+  padding: 20px 130px;
 }
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 50;
+  width: 100%;
+  left: 0;
+  right: 0;
   background: rgba(5, 5, 5, 0.35);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(0, 225, 255, 1);
-  border-radius: 12px;
-  margin: 10px 0 20px;
+  border-radius: 0;
+  margin: 0;
 
   .nav-inner {
     display: flex;
@@ -26,7 +33,6 @@
     letter-spacing: 0.5px;
     font-size: 22px;
     padding-right: 20px;
-    text-shadow: 0 0 1px #0ff, 0 0 2px #0ff, 0 0 1px #0ff;
   }
 
   .nav-links {
@@ -81,7 +87,6 @@
     margin-right: 20px;
   }
 
-
   .lang-switch {
     --switch-height: 35px;
     --knob-size: 26px;
@@ -113,8 +118,7 @@
       height: var(--knob-size);
       border-radius: 50%;
       background: var(--white);
-      box-shadow: 0 8px 20px rgba(77, 183, 255, 0.12);
-      transition: transform var(--transition), box-shadow var(--transition);
+      transition: transform var(--transition);
       transform: translateX(0);
     }
 
@@ -149,7 +153,6 @@
 
     &:focus {
       outline: none;
-      box-shadow: 0 4px 18px rgba(77, 183, 255, 0.18);
     }
   }
 
@@ -163,63 +166,62 @@
   }
 }
 
-
 /* 🚀 NEW BREAKPOINT: Hamburger icon and mobile menu activate at 750px and below */
 @media (max-width: 750px) {
-    /* 1. Hide desktop nav links */
-    .navbar .nav-links {
-        display: none; /* Temporarily hide the desktop version */
-        /* Re-define for mobile menu */
-        position: fixed;
-        top: 0;
-        /* Position the menu completely off-screen to the right */
-        right: -300px;
-        height: 100vh;
-        width: 250px;
-        background: rgba(12, 12, 12, 0.95);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 60px 20px;
-        gap: 20px;
-        transition: right 0.3s ease;
-    }
+  /* 1. Hide desktop nav links */
+  .navbar .nav-links {
+    display: none; /* Temporarily hide the desktop version */
+    /* Re-define for mobile menu */
+    position: fixed;
+    top: 0;
+    /* Position the menu completely off-screen to the right */
+    right: -300px;
+    height: 100vh;
+    width: 250px;
+    background: rgba(12, 12, 12, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 60px 20px;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
 
-    /* 2. Show mobile menu when 'open' */
-    .navbar .nav-links.open {
-        display: flex; /* Show the mobile version */
-        right: 0; /* Bring the menu completely into view */
-    }
+  /* 2. Show mobile menu when 'open' */
+  .navbar .nav-links.open {
+    display: flex; /* Show the mobile version */
+    right: 0; /* Bring the menu completely into view */
+  }
 
-    /* 3. Show hamburger icon */
-    .navbar .menu-icon {
-        display: block;
-        position: absolute;
-        font-size: 25px;
-        top: 18px;
-        right: 10px;
-        color: var(--muted-white);
-    }
+  /* 3. Show hamburger icon */
+  .navbar .menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 25px;
+    top: 18px;
+    right: 10px;
+    color: var(--muted-white);
+  }
 
-    /* 4. Show close icon */
-    .navbar .close-icon {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
+  /* 4. Show close icon */
+  .navbar .close-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 
-    /* 5. Ensure actions container stays visible */
-    .navbar .actions {
-        margin-right: 40px; /* Adjust margin to prevent overlap with the menu icon */
-    }
+  /* 5. Ensure actions container stays visible */
+  .navbar .actions {
+    margin-right: 40px; /* Adjust margin to prevent overlap with the menu icon */
+  }
 }
 
 /* Add a style to ensure the nav-links are shown as a flex row when screen is larger than 750px */
 @media (min-width: 751px) {
-    .navbar .nav-links {
-        display: flex;
-        position: static;
-        right: auto;
-    }
+  .navbar .nav-links {
+    display: flex;
+    position: static;
+    right: auto;
+  }
 }
