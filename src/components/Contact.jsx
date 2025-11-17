@@ -60,6 +60,7 @@ export default function Contact() {
               ></textarea>
 
               <button type="button" className="btn btn2" onClick={handleWhatsAppSend}>
+                <i className="fa-brands fa-whatsapp"></i>
                 {lang === 'en' ? 'Send via WhatsApp' : 'أرسل عبر واتساب'}
               </button>
             </form>

@@ -1,162 +1,5 @@
-// #contact {
-//   padding: 20px 130px;
-//   background: var(--gradient);
-//   position: relative;
-//   overflow: hidden;
-// }
-// .contact-left {
-//   flex-basis: 35%;
+// ملف: contact.scss (النسخة النهائية المثالية)
 
-//   .sube-title {
-//     color: var(--white);
-//     font-size: 48px;
-//     margin-bottom: 20px;
-//   }
-
-//   p {
-//     color: var(--text);
-//     margin: 15px 0;
-//     font-size: 18px;
-
-//     i {
-//       color: var(--primary);
-//       margin-right: 10px;
-//     }
-//   }
-
-//   .social-icons {
-//     margin-top: 40px;
-
-//     a {
-//       text-decoration: none;
-//       font-size: 32px;
-//       margin-right: 18px;
-//       color: var(--muted-text);
-//       display: inline-block;
-//       transition: all 0.4s ease;
-
-//       &:hover {
-//         color: var(--primary);
-//         transform: translateY(-8px) scale(1.2);
-//         filter: drop-shadow(0 0 15px var(--primary));
-//       }
-//     }
-//   }
-// }
-
-// .contact-right {
-//   flex-basis:60%;
-
-//   form {
-//     width: 100%;
-
-//     input,
-//     textarea {
-//       width: 100%;
-//       border: 2px solid var(--border);
-//       outline: none;
-//       background: rgba(17, 17, 17, 0.8);
-//       backdrop-filter: blur(10px);
-//       padding: 18px;
-//       margin: 18px 0;
-//       color: var(--white) !important;
-//       font-size: 18px;
-//       border-radius: 12px;
-//       transition: all 0.4s ease;
-
-//       &::placeholder {
-//         color: rgba(255, 255, 255, 0.5);
-//         font-weight: 500;
-//       }
-
-//       &:focus {
-//         border-color: var(--primary);
-//         transform: translateY(-2px);
-//       }
-//     }
-
-//     .btn2 {
-//       padding: 16px 70px;
-//       font-size: 18px;
-//       font-weight: 600;
-//       margin-top: 25px;
-//       cursor: pointer;
-//       background: transparent;
-//       color: var(--white);
-//       border: 2px solid var(--primary);
-//       border-radius: 50px;
-//       transition: all 0.4s ease;
-
-//       &:hover {
-//         background: var(--primary);
-//         color: var(--black);
-//         transform: translateY(-5px);
-//       }
-
-//       &:active {
-//         transform: translateY(-2px);
-//       }
-//     }
-//   }
-// }
-
-// #msg {
-//   color: var(--primary);
-//   margin-top: 15px;
-//   display: block;
-//   font-weight: 600;
-//   font-size: 16px;
-//   animation: fadeIn 0.5s ease;
-// }
-
-// @keyframes fadeIn {
-//   from {
-//     opacity: 0;
-//     transform: translateY(10px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
-
-// /* Responsive */
-// /* Responsive - تحسين زر الإرسال على الموبايل */
-// @media (max-width: 600px) {
-//   .contact-left,
-//   .contact-right {
-//     flex-basis: 100%;
-//   }
-
-//   .contact-left {
-//     margin-bottom: 50px;
-//     text-align: center;
-
-//     .social-icons a {
-//       font-size: 28px;
-//       margin: 0 12px;
-//     }
-//   }
-
-//   .sube-title {
-//     font-size: 40px !important;
-//   }
-
-//   /* ← هذا الجزء الجديد المهم */
-//   .contact-right form {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center; /* يركز كل العناصر أفقيًا */
-//   }
-
-//   .contact-right .btn2 {
-//     padding: 16px 60px !important; /* عرض مناسب على الموبايل */
-//     width: fit-content;
-//     margin: 25px auto 0 auto !important;
-//   }
-// }
-
-// ملف: contact.scss
 #contact {
   padding: 60px 5vw;
   background: var(--gradient);
@@ -164,8 +7,9 @@
   overflow: hidden;
 }
 
-.contact-left, .contact-right {
-  flex-basis: 100%; // من الأول 100% على الموبايل
+.contact-left,
+.contact-right {
+  flex-basis: 100%;
 }
 
 .contact-left {
@@ -183,7 +27,10 @@
     margin: 20px 0;
     font-size: 17px;
 
-    i { color: var(--primary); margin-right: 12px; }
+    i {
+      color: var(--primary);
+      margin-right: 12px;
+    }
   }
 
   .social-icons {
@@ -212,7 +59,8 @@
   align-items: center;
   gap: 18px;
 
-  input, textarea {
+  input,
+  textarea {
     width: 100%;
     max-width: 500px;
     border: 2px solid var(--border);
@@ -224,7 +72,9 @@
     border-radius: 12px;
     transition: all 0.4s ease;
 
-    &::placeholder { color: rgba(255, 255, 255, 0.5); }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
 
     &:focus {
       border-color: var(--primary);
@@ -232,23 +82,113 @@
     }
   }
 
+  // زر الواتساب الخرافي
   .btn2 {
-    padding: 16px 70px;
-    width: fit-content;
-    margin: 10px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 36px;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+    margin: 20px auto 0;
+    min-width: 260px;
+    position: relative;
+    overflow: hidden;
+
+    i {
+      font-size: 26px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    &:active::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    &:hover {
+      background: linear-gradient(135deg, #128c7e, #25d366);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+    }
+
+    &:active {
+      transform: translateY(-2px);
+    }
   }
 }
 
-// على الشاشات الكبيرة نرجع الـ 2 columns
+// على الديسكتوب: رجع الـ 2 columns + زر أكبر شوي
 @media (min-width: 992px) {
   .row {
     display: flex;
     gap: 5%;
   }
-  .contact-left { flex-basis: 40%; margin-bottom: 0; text-align: left; }
-  .contact-right { flex-basis: 55%; }
-  .contact-left .social-icons { justify-content: flex-start; }
-  .contact-right form { align-items: stretch; }
+
+  .contact-left {
+    flex-basis: 40%;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .contact-right {
+    flex-basis: 55%;
+  }
+
+  .contact-left .social-icons {
+    justify-content: flex-start;
+  }
+
+  .contact-right form {
+    align-items: stretch;
+  }
+
   .contact-right form input,
-  .contact-right form textarea { max-width: none; }
+  .contact-right form textarea {
+    max-width: none;
+  }
+
+  .contact-right form .btn2 {
+    padding: 20px 42px;
+    font-size: 19px;
+    min-width: 300px;
+    gap: 16px;
+
+    i {
+      font-size: 28px;
+    }
+  }
+}
+
+// تحسين إضافي للموبايل
+@media (max-width: 480px) {
+  .contact-right form .btn2 {
+    padding: 20px 32px;
+    font-size: 19px;
+    min-width: 90%;
+    gap: 14px;
+
+    i {
+      font-size: 28px;
+    }
+  }
 }
