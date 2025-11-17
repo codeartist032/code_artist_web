@@ -1,29 +1,29 @@
 /* Small phones (common widths: 320–420px) */
 @media only screen and (max-width: 420px) {
   .container {
-    padding: 0 12px;
+    padding: 0 clamp(8px, 3vw, 12px);
   }
 
   #header {
-    padding: 32px 0;
+    padding: clamp(24px, 8vw, 32px) 0;
   }
 
   .header-text {
-    margin-top: 12px;
-    font-size: 14px;
+    margin-top: clamp(8px, 3vw, 12px);
+    font-size: clamp(12px, 3.5vw, 14px);
 
     h1,
     h2 {
-      font-size: 20px;
+      font-size: clamp(18px, 5vw, 20px);
       line-height: 1.15;
-      margin: 0 0 8px 0;
+      margin: 0 0 clamp(6px, 2vw, 8px) 0;
     }
   }
 
   .navbar .menu-icon {
     display: block;
-    font-size: 30px;
-    padding: 8px;
+    font-size: clamp(24px, 7vw, 30px);
+    padding: clamp(6px, 2vw, 8px);
   }
 
   /* Full-width mobile menu on very small screens */
@@ -34,13 +34,13 @@
     right: -100%;
     width: 100%;
     height: 100vh;
-    padding-top: 64px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-top: clamp(56px, 15vw, 64px);
+    padding-left: clamp(12px, 4vw, 18px);
+    padding-right: clamp(12px, 4vw, 18px);
     z-index: 1000;
     transition: right 0.28s ease;
     flex-direction: column;
-    gap: 14px;
+    gap: clamp(10px, 3vw, 14px);
   }
 
   .navbar .nav-links.open {
@@ -49,20 +49,20 @@
 
   .navbar .nav-links li {
     display: block;
-    margin: 10px 0;
+    margin: clamp(8px, 2vw, 10px) 0;
   }
 
   .navbar .nav-links .close-icon {
     position: absolute;
-    top: 14px;
-    right: 14px;
+    top: clamp(10px, 3vw, 14px);
+    right: clamp(10px, 3vw, 14px);
     cursor: pointer;
     display: block;
   }
 
   .sube-title {
-    font-size: 22px;
-    margin-bottom: 14px;
+    font-size: clamp(20px, 5.5vw, 22px);
+    margin-bottom: clamp(10px, 3vw, 14px);
   }
 
   .about-col-1,
@@ -74,7 +74,7 @@
   }
 
   .about-col-1 {
-    margin-bottom: 16px;
+    margin-bottom: clamp(12px, 4vw, 16px);
   }
 
   #portfolio .work {
@@ -86,39 +86,39 @@
   form textarea,
   .btn2 {
     width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-left: clamp(10px, 3vw, 12px);
+    padding-right: clamp(10px, 3vw, 12px);
+    padding-top: clamp(10px, 3vw, 12px);
+    padding-bottom: clamp(10px, 3vw, 12px);
   }
 }
 
 /* Larger phones (portrait phablets) */
 @media only screen and (min-width: 421px) and (max-width: 600px) {
   .container {
-    padding: 0 16px;
+    padding: 0 clamp(12px, 4vw, 16px);
   }
 
   #header {
-    padding: 36px 0;
+    padding: clamp(28px, 8vw, 36px) 0;
   }
 
   .header-text {
-    margin-top: 16px;
-    font-size: 15px;
+    margin-top: clamp(12px, 4vw, 16px);
+    font-size: clamp(14px, 4vw, 15px);
 
     h1,
     h2 {
-      font-size: 22px;
+      font-size: clamp(20px, 5.5vw, 22px);
       line-height: 1.18;
-      margin: 0 0 8px 0;
+      margin: 0 0 clamp(6px, 2vw, 8px) 0;
     }
   }
 
   .navbar .menu-icon {
     display: block;
-    font-size: 30px;
-    padding: 8px;
+    font-size: clamp(26px, 7vw, 30px);
+    padding: clamp(6px, 2vw, 8px);
   }
 
   /* Slide-out menu with fixed width on larger phones */
@@ -127,15 +127,15 @@
     position: fixed;
     top: 0;
     right: -280px;
-    width: 280px;
+    width: clamp(240px, 70vw, 280px);
     height: 100vh;
-    padding-top: 70px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-top: clamp(60px, 15vw, 70px);
+    padding-left: clamp(14px, 4vw, 18px);
+    padding-right: clamp(14px, 4vw, 18px);
     z-index: 1000;
     transition: right 0.32s ease;
     flex-direction: column;
-    gap: 16px;
+    gap: clamp(12px, 3vw, 16px);
   }
 
   .navbar .nav-links.open {
@@ -143,33 +143,33 @@
   }
 
   .sube-title {
-    font-size: 26px;
-    margin-bottom: 16px;
+    font-size: clamp(24px, 6vw, 26px);
+    margin-bottom: clamp(12px, 3vw, 16px);
   }
 
   form input,
   form textarea,
   .btn2 {
     width: 100%;
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-left: clamp(12px, 3.5vw, 14px);
+    padding-right: clamp(12px, 3.5vw, 14px);
+    padding-top: clamp(12px, 3.5vw, 14px);
+    padding-bottom: clamp(12px, 3.5vw, 14px);
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   .container {
-    padding: 0 20px;
+    padding: 0 clamp(16px, 4vw, 20px);
   }
 
   .header-text h1,
   .header-text h2 {
-    font-size: 34px;
+    font-size: clamp(28px, 6vw, 34px);
   }
 
   .navbar .nav-links {
-    gap: 18px;
+    gap: clamp(14px, 3vw, 18px);
     right: auto;
     position: static;
     height: auto;
@@ -178,8 +178,33 @@
   }
 
   .lang-switch {
-    width: 74px;
-    --switch-height: 32px;
-    --knob-size: 26px;
+    width: clamp(60px, 12vw, 74px);
+    --switch-height: clamp(26px, 6vw, 32px);
+    --knob-size: clamp(22px, 5vw, 26px);
   }
+}
+// ملف جديد: responsive.scss (احفظه كملف مستقل واستورديه في main.scss)
+
+// عام لكل الأقسام
+#about, #services, #portfolio, #contact, .header-text {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .sube-title { font-size: 36px !important; }
+  h1, h2 { text-align: center; }
+  .header-text { text-align: center; margin-top: 20px; }
+}
+
+@media (max-width: 480px) {
+  .sube-title { font-size: 32px !important; }
+  .btn2 { padding: 14px 50px !important; font-size: 16px; }
+  .social-icons a { font-size: 28px; }
 }

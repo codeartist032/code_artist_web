@@ -1,5 +1,79 @@
+// #about {
+//   padding: 20px 130px;
+//   color: #ababab;
+// }
+
+// .row {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// }
+
+// .about-col-1 {
+//   flex-basis: 35%;
+
+//   img {
+//     width: 100%;
+//     border-radius: 15px;
+//   }
+// }
+
+// .about-col-2 {
+//   flex-basis: 60%;
+
+//   .sube-title {
+//     font-size: 60px;
+//     font-weight: 600;
+//     color: white;
+//   }
+// }
+
+// .tab-titles {
+//   display: inline-flex;
+//   border-radius: 999px;
+//   padding: 4px;
+//   margin: 20px 0 10px;
+
+//   .tab-links {
+//     padding: 12px 20px;
+//     color: #e5e5e5;
+//     font-size: 18px;
+//     font-weight: 600;
+//     border-radius: 999px;
+//     transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+
+//     &:hover {
+//       color: #fff;
+//     }
+
+//     &.active-linke {
+//       background: linear-gradient(90deg, rgb(1, 170, 255), rgb(1, 170, 255));
+//       color: #fff;
+//       transform: translateY(-1px);
+//     }
+//   }
+// }
+
+// .tab-contents {
+//   display: none;
+
+//   &.active-tabe {
+//     display: block;
+//   }
+
+//   ul li {
+//     list-style: none;
+//     margin: 10px 0;
+
+//     span {
+//       color: rgb(1, 170, 255);
+//       font-size: 14px;
+//     }
+//   }
+// }
+// ملف: about.scss (استبدل الملف كاملاً)
 #about {
-  padding: 20px 130px;
+  padding: 50px 5vw; // بدل 130px الثابت
   color: #ababab;
 }
 
@@ -7,24 +81,36 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .about-col-1 {
   flex-basis: 35%;
+  min-width: 280px;
 
   img {
     width: 100%;
+    height: auto;
     border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 }
 
 .about-col-2 {
   flex-basis: 60%;
+  min-width: 300px;
 
   .sube-title {
-    font-size: 60px;
+    font-size: clamp(32px, 8vw, 60px); // متجاوب تماماً
     font-weight: 600;
     color: white;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
   }
 }
 
@@ -32,30 +118,33 @@
   display: inline-flex;
   border-radius: 999px;
   padding: 4px;
-  margin: 20px 0 10px;
+  margin: 20px 0 30px;
+  background: rgba(255, 255, 255, 0.05);
+  gap: 4px;
 
   .tab-links {
     padding: 12px 20px;
     color: #e5e5e5;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 999px;
-    transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     &:hover {
       color: #fff;
     }
 
     &.active-linke {
-      background: linear-gradient(90deg, rgb(1, 170, 255), rgb(1, 170, 255));
+      background: linear-gradient(90deg, #01aaff, #01aaff);
       color: #fff;
-      transform: translateY(-1px);
     }
   }
 }
 
 .tab-contents {
   display: none;
+  animation: fadeIn 0.5s ease;
 
   &.active-tabe {
     display: block;
@@ -63,11 +152,31 @@
 
   ul li {
     list-style: none;
-    margin: 10px 0;
+    margin: 15px 0;
+    font-size: 15px;
 
     span {
-      color: rgb(1, 170, 255);
+      color: #01aaff;
       font-size: 14px;
+      font-weight: 500;
     }
+  }
+}
+
+// Responsive للـ About
+@media (max-width: 768px) {
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .tab-titles {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
