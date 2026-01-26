@@ -1,0 +1,109 @@
+#contact {
+  padding: 80px 0;
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 1.5rem 0;
+    color: var(--muted-white);
+    font-size: 1.1rem;
+
+    i {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+  }
+
+  .social-icons {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: var(--muted-white);
+      transition: var(--transition);
+      
+      &:hover {
+        color: var(--primary);
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 10px var(--primary-glow));
+      }
+    }
+  }
+}
+
+.contact-right {
+  flex: 1.5;
+  min-width: 300px;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    input, textarea {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      outline: none;
+      padding: 1.25rem;
+      color: var(--white);
+      font-size: 1rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+
+      &:focus {
+        border-color: var(--primary);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 20px var(--primary-glow);
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    button {
+      align-self: flex-start;
+      padding: 14px 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      background: var(--primary);
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px var(--primary-glow);
+
+      &:hover {
+        background: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+#msg {
+  color: #00ff88;
+  margin-top: 1rem;
+  font-weight: 600;
+  display: block;
+}
