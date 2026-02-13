@@ -37,11 +37,36 @@ export default function Navigation() {
               </a>
             </li>
           ))}
+          {/* Mobile Language Switch - Inside Menu */}
+          <li className="mobile-only">
+             <div
+              className={`lang-switch ${lang === 'ar' ? 'ar' : 'en'}`}
+              onClick={() => { toggleLang(); setMenuOpen(false); }}
+              role="button"
+              tabIndex={0}
+              aria-label="Toggle language"
+            >
+              {lang === 'ar' ? (
+                <>
+                  <span className="label">عربي</span>
+                  <span className="label">EN</span>
+                  <div className="knob">ع</div>
+                </>
+              ) : (
+                <>
+                  <span className="label">EN</span>
+                  <span className="label">عربي</span>
+                  <div className="knob">EN</div>
+                </>
+              )}
+            </div>
+          </li>
         </ul>
 
         <div className="actions">
+          {/* Desktop Language Switch - In Header */}
           <div
-            className={`lang-switch ${lang === 'ar' ? 'ar' : 'en'}`}
+            className={`lang-switch desktop-only ${lang === 'ar' ? 'ar' : 'en'}`}
             onClick={toggleLang}
             role="button"
             tabIndex={0}

@@ -10,6 +10,10 @@
   border-bottom: 1px solid var(--glass-border);
   transition: var(--transition);
 
+  .mobile-only {
+    display: none;
+  }
+
   .nav-inner {
     display: flex;
     align-items: center;

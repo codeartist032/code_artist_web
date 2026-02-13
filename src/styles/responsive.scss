@@ -53,6 +53,55 @@
     
     .actions {
       gap: 1.5rem;
+      .amount-btn { display: none; } /* Hide 'Request Quote' on mobile if present/needed */
+      .desktop-only { display: none; }
+    }
+
+    /* Mobile Menu Items Stagger Animation */
+    .nav-links li, .nav-links .mobile-only {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.open {
+        li, .mobile-only {
+            opacity: 1;
+            transform: translateY(0);
+            
+            @for $i from 1 through 6 {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{$i * 0.1}s;
+                }
+            }
+        }
+    }
+    
+    .mobile-only {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        
+        .lang-switch {
+            width: 120px;
+            height: 44px;
+            padding: 5px;
+            
+            .label {
+                font-size: 14px;
+                line-height: 34px;
+            }
+            
+            .knob {
+                width: 50px;
+                height: 34px;
+                top: 5px;
+                font-size: 14px;
+            }
+            
+            &.en .knob { left: 5px; }
+            &.ar .knob { left: 65px; }
+        }
     }
   }
 
