@@ -8,7 +8,8 @@ export default function Contact() {
   const [message, setMessage] = useState('');
 
   const handleWhatsAppSend = () => {
-    const phone = '9660534538089'; // Your WhatsApp number
+    // const phone = '9660534538089'; // Your WhatsApp numbe
+   const phone = '963958455194'; 
     const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encodedText = encodeURIComponent(text);
     const whatsappURL = `https://wa.me/${phone}?text=${encodedText}`;
